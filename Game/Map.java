@@ -1,5 +1,7 @@
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import java.io.File;
@@ -16,6 +18,7 @@ class Map extends Pane {
     // constructor
     public Map(String file) throws FileNotFoundException {
 
+
         Scanner read = new Scanner(new File(file));
         size = Integer.parseInt(read.nextLine());
         System.out.println(size);
@@ -30,11 +33,15 @@ class Map extends Pane {
             }
         }
 
+        Image image = new Image("rock.png");
+
         for(int x = 0; x < size; x++){
             for(int y = 0; y < size; y++){
                 Rectangle a = new Rectangle(x * UNIT, y * UNIT, UNIT, UNIT);
                 if(map[y][x] == 1) {
-                    a.setFill(Color.BLACK);
+                    ImagePattern radialGradient = new ImagePattern(image, x * UNIT, y * UNIT, UNIT, UNIT, false);
+//                    a.setFill(Color.BLACK);
+                        a.setFill(radialGradient);
                 } else {
                     a.setFill(Color.WHITE);
                 }
