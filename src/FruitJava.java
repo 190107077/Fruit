@@ -61,6 +61,7 @@ abstract class Fruit{
         System.out.println("Banana " + a[2]);
 
         System.out.println("Total Price: " + Math.round(sum)); // шыққан бағаны бүтін санға айналдыру үшін
+
         System.out.println("Total Price: " + sum);
     }
 
