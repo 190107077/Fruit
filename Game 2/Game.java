@@ -21,13 +21,13 @@ public class Game extends Application{
         final List<String> parameters = params.getRaw();
         final String file = !parameters.isEmpty() ? parameters.get(0) : "";
 
-	    map = new Map(file);
+  	    map = new Map(file);
         MyBotPlayer bot = new MyBotPlayer(map);
 
-	    food = new Food(map, bot);
-	    bot.feed(food);
+  	    food = new Food(map, bot);
+  	    bot.feed(food);
 
-	    Scene scene = new Scene(map,map.getUnit()*map.getSize(), map.getUnit()*map.getSize());
+  	    Scene scene = new Scene(map,map.getUnit()*map.getSize(), map.getUnit()*map.getSize());
 
         scene.setOnKeyPressed(event -> {
             KeyCode keyCode =  event.getCode();

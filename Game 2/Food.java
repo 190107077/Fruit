@@ -40,7 +40,7 @@ public class Food {
                 });
 
                 for(this.time = 5; this.time > 0; --this.time) {
-//                for(this.time = 500; this.time > 0; --this.time) {
+                // for(this.time = 500; this.time > 0; --this.time) {
                     Platform.runLater(() -> {
                         this.seconds.setText("" + this.time);
                     });
